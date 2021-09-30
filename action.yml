@@ -3,8 +3,20 @@ name: 'Cloudflare DNSLink via Cloudflare API'
 description: 'Update DNS Link with new IPFS Hash via Cloudflare'
 
 inputs:
-  cid: # IPFS CID
+  CID:
     description: 'IPFS CID'
+    required: true
+  TOKEN:
+    description: 'IPFS CID'
+    required: true
+  ZONE_ID:
+    description: 'CLOUDFLARE API TOKEN'
+    required: true
+  RECORD_DOMAIN:
+    description: 'CLOUDFLARE RECORD DOMAIN'
+    required: true
+  RECORD_NAME:
+    description: 'CLOUDFLARE RECORD NAME'
     required: true
 runs:
   using: 'node12'

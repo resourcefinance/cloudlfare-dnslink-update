@@ -112,11 +112,11 @@ const dns_1 = __nccwpck_require__(5619);
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const TOKEN = core.getInput('TOKEN');
-            const ZONE_ID = core.getInput('ZONE_ID');
-            const CID = core.getInput('CID');
-            const RECORD_DOMAIN = core.getInput('RECORD_DOMAIN');
-            const RECORD_NAME = core.getInput('RECORD_NAME');
+            const TOKEN = core.getInput('TOKEN', { required: true });
+            const ZONE_ID = core.getInput('ZONE_ID', { required: true });
+            const CID = core.getInput('CID', { required: true });
+            const RECORD_DOMAIN = core.getInput('RECORD_DOMAIN', { required: true });
+            const RECORD_NAME = core.getInput('RECORD_NAME', { required: true });
             const { updated, data } = yield (0, dns_1.updateDNS)(TOKEN, ZONE_ID, CID, RECORD_DOMAIN, RECORD_NAME);
             if (!updated)
                 throw new Error('Could not update DNS');

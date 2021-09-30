@@ -3,11 +3,11 @@ import { updateDNS } from './dns'
 
 async function run(): Promise<void> {
   try {
-    const TOKEN = core.getInput('TOKEN')
-    const ZONE_ID = core.getInput('ZONE_ID')
-    const CID = core.getInput('CID')
-    const RECORD_DOMAIN = core.getInput('RECORD_DOMAIN')
-    const RECORD_NAME = core.getInput('RECORD_NAME')
+    const TOKEN = core.getInput('TOKEN', { required: true })
+    const ZONE_ID = core.getInput('ZONE_ID', { required: true })
+    const CID = core.getInput('CID', { required: true })
+    const RECORD_DOMAIN = core.getInput('RECORD_DOMAIN', { required: true })
+    const RECORD_NAME = core.getInput('RECORD_NAME', { required: true })
 
     const { updated, data } = await updateDNS(
       TOKEN,
