@@ -5,13 +5,13 @@ Allows you to quickly update a Cloudflare DNSLink with a new IPFS CID. This acti
 ## Example
 
 ```yml
-- name: Update DNSLink
+- name: Update DNS Link via Cloudflare
   env:
     CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
     RECORD_DOMAIN: 'textile.io'
     RECORD_NAME: '_dnslink.subdomainname'
     CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-  id: dnslink
+  id: cloudflare-dnslink
   uses: resource-network/cloudflare-update-dnslink@v2
   with:
     cid: ${{ steps.push.outputs.cid }}
